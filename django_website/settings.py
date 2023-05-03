@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'tinymce',
     'fontawesomefree',
     'crispy_forms',
-    'bootstrap4',
+    # 'bootstrap4',
+    'crispy_bootstrap4',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
