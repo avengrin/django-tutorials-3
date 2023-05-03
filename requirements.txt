@@ -2,3 +2,5 @@ django
 django-environ
 django-tinymce
 fontawesomefree
+django-crispy-forms
+django-bootstrap4

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os 
 
 # AV
 # https://pypi.org/project/django-environ/
@@ -50,6 +49,8 @@ INSTALLED_APPS = [
     'users',
     'tinymce',
     'fontawesomefree',
+    'crispy_forms',
+    'bootstrap4',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -124,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bratislava'
 
 USE_I18N = True
 
@@ -137,6 +138,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = '/'
 
 TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 100,
