@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     # 'bootstrap4',
     'crispy_bootstrap4',
+    'captcha',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -146,6 +147,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
 AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+
+RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
 
 TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 100,
