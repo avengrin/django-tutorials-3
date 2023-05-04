@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # AV
 # https://pypi.org/project/django-environ/
@@ -150,6 +151,9 @@ AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
 
 RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 100,
