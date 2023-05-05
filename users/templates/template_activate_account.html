@@ -1,0 +1,9 @@
+{% autoescape off %}
+{# Hi {{ user.username }}, #}
+Ahoj {{ user }},
+
+{# Please click on the link below to confirm your registration: #}
+Klikni prosím na odkaz nižšie a potvrď svoju registráciu: 
+
+{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}
