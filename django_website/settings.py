@@ -168,6 +168,8 @@ EMAIL_USE_TLS=bool(env('EMAIL_USE_TLS'))
 
 PASSWORD_RESET_TIMEOUT = int(env('PASSWORD_RESET_TIMEOUT'))
 
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880 # 5MB
+
 TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 100,
     'selector': 'textarea',
@@ -186,4 +188,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 'auto',
     "height": "600px",
     'image_caption': True,
+    "images_upload_url": "upload_image",
 }
