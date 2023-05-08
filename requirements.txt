@@ -7,3 +7,4 @@ crispy-bootstrap4
 django-recaptcha
 pillow
 six
+django-allauth
