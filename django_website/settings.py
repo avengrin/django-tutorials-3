@@ -51,10 +51,19 @@ INSTALLED_APPS = [
     'tinymce',
     'fontawesomefree',
     'crispy_forms',
-    # 'bootstrap4',
+    # 'bootstrap4', nahradene 'crispy_bootstrap4',
     'crispy_bootstrap4',
     'captcha',
+    # Pridane pre prihlasenie cez Google ucet
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
+
+SITE_ID = 1
+SOCIALACCOUNT_LOGIN_ON_GET=True
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -147,7 +156,23 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
-AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+AUTHENTICATION_BACKENDS = [
+    'users.backends.EmailBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 
 RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
